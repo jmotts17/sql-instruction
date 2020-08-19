@@ -10,6 +10,8 @@
 
 -- Constraints: Not Null, Unique, Default, Auto_Increment --- Help you control flow and data entry
 
+-- <, >, <=, >=, =, <>, AND, OR
+
 -- ---------------------------------------------------------------------------------------
 
 -- Deletes the table
@@ -42,3 +44,19 @@ INSERT INTO student VALUES(5, 'Mike', 'Computer Science');
 
 -- How to specify which columns you want to enter
 INSERT INTO student(student_id, name) VALUES(3, 'Claire');
+
+-- Update
+UPDATE student 
+SET major = 'undecided';
+
+-- Delete
+DELETE FROM student
+WHERE student_id = 5;
+
+-- Limit
+SELECT * FROM student 
+LIMIT 2;
+
+-- In
+SELECT * FROM student
+WHERE name IN ('Claire', 'Kate', 'Mike');
