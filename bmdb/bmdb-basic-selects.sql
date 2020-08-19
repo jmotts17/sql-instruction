@@ -42,11 +42,7 @@ select * from movie
  where title like 'S%';
  
 -- all movies that have the letter 'e' in the title
-select * from movie
+select * frommoviemovie movie
  where title like '%e%';
  
  
-
-
-
-
