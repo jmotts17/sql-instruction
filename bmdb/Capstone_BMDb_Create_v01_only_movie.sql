@@ -7,11 +7,33 @@ USE bmdb;													-- Same as double clicking Schema
 -- DROP TABLE IF EXISTS Movie;								-- Drops the table, but drop database drops all tables so not needed
 Create table Movie (
 ID 			integer 		primary key auto_increment,
-Title 		varchar(255) 	not null unique,
+Title 		varchar(255) 	not null,
 Year 		integer 		not null,
 Rating 		varchar(5) 		not null,
-Director 	varchar(255) 	not null
--- CONSTRAINT utitle unique (Title)							-- Another way to define the unique constraint
+Director 	varchar(255) 	not null,
+CONSTRAINT unq_movie unique (Title, Year)
+);
+
+-- create Actor table
+Create table Actor (
+ID 			integer 		primary key auto_increment,
+FirstName 	varchar(255) 	not null,
+LastName 	varchar(255) 	not null,
+Gender 		varchar(1) 		not null,
+BirthDate 	date 			not null,
+CONSTRAINT unq_actor unique (FirstName, LastName, BirthDate)
+);
+
+-- create Credit table
+-- business rule - combo of actor+movie must be unique
+Create table Credit (
+ID			integer			primary key auto_increment,
+actorID		integer			not null,
+movieID 	integer			not null,
+role		varchar(255)	not null,
+FOREIGN KEY (ActorID) REFERENCES Actor(ID),
+FOREIGN KEY (movieID) REFERENCES Movie(ID),
+CONSTRAINT act_mov unique (ActorID, MovieID)
 );
 
 -- Add some movies
@@ -36,3 +58,18 @@ Director 	varchar(255) 	not null
 	(18, 'The Matrix', 1999, 'R', 'Lana Wachowski'),
 	(19, 'The Outpost', 2020, 'PG-13', 'Rod Lurie'),
 	(20, 'The Avengers: Endgame', 2019, 'PG-13', 'Anthony Russo');		-- Has 2 directors
+
+-- Add some actors
+-- Date fields: YYYY-MM-DD
+ insert into Actor VALUES
+ 	(1, 'Mark', 'Hamil', 'M', '1951-09-25'),
+ 	(2, 'Harrison', 'Ford', 'M', '1942-07-13'),
+    (3, 'Molly', 'Ringwald', 'F', '1968-02-18'),
+    (4, 'Anthony Michael', 'Hall', 'M', '1968-04-14');
+    
+    -- Add data to credit table
+    insert into Credit VALUES
+    (1, 1, 1, 'Luke Skywalker'),
+    (2, 2, 1, 'Han Solo'),
+    (3, 3, 2, 'Samantha Baker'),
+    (4, 4, 2, 'Geek');
