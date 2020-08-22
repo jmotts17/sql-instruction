@@ -25,7 +25,20 @@ INSERT INTO Actor (firstName, lastName, gender, birthdate) VALUES
 ('Chevy', 'Chase', 'M', '1943-10-08'),
 ('Beveryly', 'D\'Angelo', 'F', '1951-11-15'),
 ('Bill', 'Murray', 'M', '1950-10-21'),
-('Andie', 'MacDowell', 'F', '1958-04-21');
+('Andie', 'MacDowell', 'F', '1958-04-21'),
+('Bruce', 'Willis', 'M', '1955-03-19'),				-- Start Credit
+('Milla', 'Jovovich', 'F', '1975-12-17'),
+('John', 'Cusack', 'M', '1966-06-28'),
+('David Ogden', 'Stiers', 'M', '1942-10-31'),
+('Cleavon', 'Little', 'M', '1939-06-01'),
+('Gene', 'Wilder', 'M', '1933-06-11'),
+('Tom', 'Hanks', 'M', '1956-07-09'),
+('Tim', 'Allen', 'M', '1953-06-13'),
+('Mel', 'Gibson', 'M', '1956-01-03'),
+('Heath', 'Ledger', 'M', '1979-04-04'),
+('Ken', 'Watanbe', 'M', '1959-10-21'),
+('Tom', 'Cruise', 'M', '1962-07-07'),
+('Christian', 'Bale', 'M', '1974-01-30');
 
 -- 3 add related credit entries
 INSERT INTO Credit (ActorID, MovieID, role) VALUES
