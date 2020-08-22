@@ -110,7 +110,7 @@ CREATE OR REPLACE VIEW current_dept_emp AS
 flush /*!50503 binary */ logs;
 
 SELECT 'LOADING departments' as 'INFO';
-source load_departments.dump ;
+source 1_load_departments.dump ;
 SELECT 'LOADING employees' as 'INFO';
 source load_employees.dump ;
 SELECT 'LOADING dept_emp' as 'INFO';
