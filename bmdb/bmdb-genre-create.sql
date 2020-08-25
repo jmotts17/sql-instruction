@@ -1,8 +1,13 @@
+-- bmdb - add genre and movie genre tables
+-- NOTE: You must run the bmdb create script first!
+
+-- create Genre table
 Create table Genre (
 ID			integer			primary key auto_increment,
-name		varchar(30)		not null
+name		varchar(30)		not null unique
 );
 
+-- create MovieGenre table
 Create table MovieGenre (
 ID			integer			primary key auto_increment,
 movieID		integer			not null,
@@ -12,6 +17,7 @@ FOREIGN KEY (genreID) references Genre(ID),
 CONSTRAINT gen_mov unique (movieID, genreID)
 );
 
+-- insert movie genres into Genre table
 INSERT INTO Genre(name) VALUES 
 ('Action'),
 ('Comedy'),
@@ -33,6 +39,7 @@ INSERT INTO Genre(name) VALUES
 ('War'),
 ('Family');
 
+-- insert data into MovieGenre table
 INSERT INTO MovieGenre (movieID, genreID) VALUES
 (1, 1), (1, 11), (1, 12),
 (2, 2), (2, 5),

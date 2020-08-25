@@ -48,16 +48,12 @@ CONSTRAINT act_mov unique (ActorID, MovieID)
     (8, 'The Last Samurai', 2003, 'R', 'Edward Zwick'),
     (9, 'The Dark Knight', 2008, 'PG-13', 'Christopher Nolan'),
     (10, 'Gladiator', 2000, 'R', 'Ridley Scott'),
-    (11, 'Despicable Me', 2010, 'PG', 'Pierre Coffin'),					-- Has 2 directors
-    (12, 'Gran Torino', 2008, 'R', 'Clint Eastwood'),
-    (13, 'LOTR: The Fellowship of the Ring', 2001, 'PG-13', 'Peter Jackson'),
-    (14, 'The Hobbit', 2012, 'PG-13', 'Peter Jackson'),
-    (15, 'The Shawshank Redemption', 1994, 'R', 'Frank Darabont'),
-	(16, 'Knives Out', 2019, 'PG-13', 'Rian Johnson'),
-	(17, 'A Quiet Place', 2018, 'PG-13', 'John Krasinski'),
-	(18, 'The Matrix', 1999, 'R', 'Lana Wachowski'),
-	(19, 'The Outpost', 2020, 'PG-13', 'Rod Lurie'),
-	(20, 'The Avengers: Endgame', 2019, 'PG-13', 'Anthony Russo');		-- Has 2 directors
+    (11, 'Gran Torino', 2008, 'R', 'Clint Eastwood'),
+    (12, 'LOTR: The Fellowship of the Ring', 2001, 'PG-13', 'Peter Jackson'),
+    (13, 'The Hobbit', 2012, 'PG-13', 'Peter Jackson'),
+    (14, 'The Shawshank Redemption', 1994, 'R', 'Frank Darabont'),
+	(15, 'A Quiet Place', 2018, 'PG-13', 'John Krasinski'),
+	(16, 'The Outpost', 2020, 'PG-13', 'Rod Lurie');
 
 -- Add some actors
 -- Date fields: YYYY-MM-DD
