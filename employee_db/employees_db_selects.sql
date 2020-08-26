@@ -35,3 +35,26 @@ ON employees.emp_no = dept_emp.emp_no
 JOIN departments
 ON departments.dept_no = dept_emp.dept_no
 GROUP BY departments.dept_name;
+
+-- Who is the most tenured employee?
+-- ** Multiple hire dates at 1985-01-01. Answer didn't match.
+SELECT employees.first_name, employees.last_name, employees.hire_date
+FROM employees
+ORDER BY hire_date, first_name;
+
+-- What's the highest averaged salaried department?
+-- ** Result sales with $80667.
+SELECT departments.dept_name, AVG(salaries.salary) FROM employees
+	JOIN salaries
+    ON salaries.emp_no = employees.emp_no 
+    JOIN dept_emp
+    on dept_emp.emp_no = employees.emp_no
+    JOIN departments
+    on departments.dept_no = dept_emp.dept_no
+    GROUP BY departments.dept_no
+    ORDER BY AVG(salaries.salary) DESC;
+    
+-- Who is the oldest employee?
+-- ** Multiple employees with the birth date of 1952-02-01.
+SELECT employees.birth_date, employees.first_name, employees.last_name, employees.gender FROM employees
+ORDER BY employees.birth_date;
