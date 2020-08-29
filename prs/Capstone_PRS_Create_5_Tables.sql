@@ -5,8 +5,8 @@ USE prs;
 
 -- Create User Table
 Create table User (
-ID				INTEGER				PRIMARY KEY AUTO_INCREMENT UNIQUE,
-UserName		VARCHAR(20)			NOT NULL,
+ID				INTEGER				PRIMARY KEY AUTO_INCREMENT,
+UserName		VARCHAR(20)			NOT NULL UNIQUE,
 Password		VARCHAR(10)			NOT NULL,
 FirstName		VARCHAR(20)			NOT NULL,
 LastName		VARCHAR(20)			NOT NULL,
@@ -68,11 +68,6 @@ FOREIGN KEY (RequestID) REFERENCES Request(ID),
 CONSTRAINT req_pdt UNIQUE (RequestID, ProductID)	
 );
 
--- Create User
-DROP USER IF EXISTS prs_user@localhost;
-CREATE USER prs_user@localhost;
-GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost; 
-
 -- Insert data into User Table
 INSERT INTO User VALUES
 (1, 'SYSTEM', 'XXXXX', 'System', 'System', 'XXX-XXX-XXXX', 'System@test.com', 0, 0),
@@ -101,3 +96,8 @@ INSERT INTO Product VALUES
 (11, 4, '940600', 'Canon imageCLASS Copier (D530)', 99.99, null, null),
 (12, 5, '228148', 'Acer Aspire ATC-780A-UR12 Desktop Computer', 399.99, '', null),
 (13, 5, '279364', 'Lenovo IdeaCentre All-In-One Desktop', 349.99, '', null);
+
+-- Create User
+DROP USER IF EXISTS prs_user@localhost;
+CREATE USER prs_user@localhost;
+GRANT SELECT, INSERT, DELETE, UPDATE ON prs.* TO prs_user@localhost;
