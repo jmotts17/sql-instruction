@@ -12,8 +12,8 @@ FirstName		VARCHAR(20)			NOT NULL,
 LastName		VARCHAR(20)			NOT NULL,
 PhoneNumber		VARCHAR(12)			NOT NULL,
 Email			VARCHAR(75)			NOT NULL,
-IsReviewer		TINYINT				NOT NULL,
-IsAdmin			TINYINT				NOT NULL
+IsReviewer		TINYINT				DEFAULT 0 NOT NULL,
+IsAdmin			TINYINT				DEFAULT 0 NOT NULL
 );
 
 -- Create Vendor Table
@@ -37,10 +37,10 @@ Description				VARCHAR(100)		NOT NULL,
 Justification			VARCHAR(255)		NOT NULL,
 DateNeeded				DATE				NOT NULL,
 DeliveryMode			VARCHAR(25)			NOT NULL,
-Status					VARCHAR(20)			NOT NULL,
+Status					VARCHAR(20)			NOT NULL DEFAULT 'New',
 Total					DECIMAL(10, 2)		NOT NULL,
-SubmittedDate			DATETIME			NOT NULL,
-ReasonForRejection		VARCHAR(100),
+SubmittedDate			DATETIME			DEFAULT CURRENT_TIMESTAMP NOT NULL,
+ReasonForRejection		VARCHAR(100)		NULL,
 FOREIGN KEY (UserID) REFERENCES User(ID)
 );
 
