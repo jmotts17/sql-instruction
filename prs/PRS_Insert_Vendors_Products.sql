@@ -29,4 +29,10 @@ INSERT INTO Product VALUES
 (20, 5, '910-005647', 'Logitech MX Master 3 Wireless Laser Mouse', 99.99, null, null),
 (21, 1, '920-009295', 'Logitech MX Keys Advanced Wireless Illuminated Keyboard', 99.99, null, null),
 (21, 3, '920-009295', 'Logitech MX Keys Advanced Wireless Illuminated Keyboard', 99.99, null, null),
-(21, 5, '920-009295', 'Logitech MX Keys Advanced Wireless Illuminated Keyboard', 99.99, null, null);
+(21, 5, '920-009295', 'Logitech MX Keys Advanced Wireless Illuminated Keyboard', 99.99, null, null),
+(22, 6, '20U9001NUS', 'ThinkPad X1 Carbon Gen 8', 1249.99, null, null),
+(23, 6, '61E7GAR1US', 'ThinkVision S24q-10 23.8-inch QHD LED Backlit LCD Monitor', 146.00, null, null),
+(24, 7, 'XPS1520', 'New XPS 15 Laptop', 1175.99, null, null), 
+(25, 7, 'U2421HE', 'Dell UltraSharp 24 USB-C Hub Monitor', '319.99', null, null),
+(26, 3, 'F8E089-BLK', 'Belkin Standard 8-Inch by 9-Inch Computer Mouse Pad', 4.60, null, null),
+(27, 3, 'F8E262-BLK', 'Belkin WaveRest Gel Mouse Pad, Black', 8.00, null, null);
